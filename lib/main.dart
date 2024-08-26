@@ -806,7 +806,7 @@ class DepartmentLeaderboardTab extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  color: Colors.grey[850],
+                  color: Colors.white,
                   child: ListTile(
                     leading: trophyIcon != null
                         ? Icon(trophyIcon, color: trophyColor, size: 30)
@@ -822,7 +822,7 @@ class DepartmentLeaderboardTab extends StatelessWidget {
                     trailing: Text(
                       '${topDepartments[index]['points']} point',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.yellow),
+                          fontWeight: FontWeight.bold, color: Colors.blue),
                     ),
                   ),
                 );
