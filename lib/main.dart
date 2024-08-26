@@ -5,25 +5,32 @@ import 'package:firebase_database/firebase_database.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase for Web
-  if (Firebase.apps.isEmpty) {
-    await Firebase.initializeApp(
-      options: FirebaseOptions(
-          apiKey: "AIzaSyCGl2NIKaQDMG-cu-EuTFWwzWj65-_G-j8",
-          authDomain: "topfive-ac256.firebaseapp.com",
-          databaseURL: "https://topfive-ac256-default-rtdb.firebaseio.com",
-          projectId: "topfive-ac256",
-          storageBucket: "topfive-ac256.appspot.com",
-          messagingSenderId: "602647191822",
-          appId: "1:602647191822:web:c574f1a48386243aebb75f",
-          measurementId: "G-1SXNPD8997"),
-    );
+  try {
+    // Initialize Firebase for Web
+    if (Firebase.apps.isEmpty) {
+      await Firebase.initializeApp(
+        options: FirebaseOptions(
+            apiKey: "AIzaSyCGl2NIKaQDMG-cu-EuTFWwzWj65-_G-j8",
+            authDomain: "topfive-ac256.firebaseapp.com",
+            databaseURL: "https://topfive-ac256-default-rtdb.firebaseio.com",
+            projectId: "topfive-ac256",
+            storageBucket: "topfive-ac256.appspot.com",
+            messagingSenderId: "602647191822",
+            appId: "1:602647191822:web:c574f1a48386243aebb75f",
+            measurementId: "G-1SXNPD8997"),
+      );
+    }
+  } catch (e) {
+    // Handle initialization error
+    print('Firebase initialization error: $e');
+    // You can also handle the error more gracefully by showing a message to the user
   }
 
   runApp(MaterialApp(
     home: LoginScreen(),
   ));
 }
+
 
 class LoginScreen extends StatefulWidget {
   @override
